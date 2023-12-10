@@ -53,6 +53,10 @@ function UserRoutes(app) {
     res.json(200);
   };
   const account = async (req, res) => {
+    if (!req.session['currentUser']) {
+      res.json(403);
+      return;
+    }
     res.json(req.session['currentUser']);
   };
   app.post("/api/users", createUser);
