@@ -5,6 +5,7 @@ export const findReviewsByUserId = (userId) => model.find({userId: userId});
 export const findReviewsByUsername = (username) =>
   model.find({ username: username });
 export const findReviewsByPlayerName = (playerName) => model.find({playerName: playerName});
+export const findReviewById = (reviewId) => model.findById(reviewId);
 export const updateReview = (reviewId, review) =>
   model.updateOne({ _id: reviewId }, { $set: review });
 export const deleteReview = (reviewId) => model.deleteOne({ _id: reviewId });
